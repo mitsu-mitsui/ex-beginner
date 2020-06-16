@@ -10,11 +10,17 @@
 
 <h1>ユーザ登録</h1>
 
-<form th:action="@{/ex4/input}" method="post">
-名前：<input name="name" type="text"><br>
-年齢：<input name="age" type="text"><br>
+<form th:action="@{/ex4/input}" method="post" th:object="${userForm}">
+
+<div th:errors="*{name}" style="color:red">nameエラー！</div>
+名前：<input name="name" type="text"  th:field="*{name}"  ><br>
+
+<div th:errors="*{age}"  style="color:red">ageエラー！</div>
+年齢：<input name="age" type="text" th:field="*{age}" ><br>
+
+<div th:errors="*{comment}"  style="color:red">commentエラー！</div>
 コメント：<br>
-<textarea name="comment" rows="3" cols="30"></textarea>
+<textarea name="comment" rows="3" cols="30" th:field="*{comment}"></textarea>
 
 <br>
 <button>登録</button>

@@ -1,8 +1,16 @@
 package com.example.form;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class UserForm {
+	@NotBlank(message="名前は必須")
 	private String name;
+	
+	@NotNull(message="年齢は必須")
 	private Integer age;
+	
+	@NotBlank(message="コメントは必須")
 	private String comment;
 
 	@Override
