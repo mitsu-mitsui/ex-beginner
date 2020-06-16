@@ -1,6 +1,7 @@
 package com.example.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller 
@@ -12,4 +13,13 @@ public class Exam01Controller {
 		
 		return "exam01";
 	}
+	
+	@RequestMapping("input")
+	public String input(String name,Model model) {
+		
+		model.addAttribute("name",name);
+		
+		return "exam01-result";
+	}
+	
 }
