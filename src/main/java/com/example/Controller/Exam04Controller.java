@@ -11,4 +11,10 @@ public class Exam04Controller {
 	public String index() {
 		return "exam04";
 	}
+	
+	@RequestMapping("/input")
+	public String input()
+	{
+		return "exam04-result";
+	}
 }
