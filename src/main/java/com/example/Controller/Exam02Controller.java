@@ -4,7 +4,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -28,6 +27,11 @@ public class Exam02Controller {
 		session.setAttribute("sum",sum);
 		
 		return "exam02-result";
+	}
+	
+	@RequestMapping("/result2")
+	public String result() {
+		return "exam02-result2";
 	}
 	
 	
